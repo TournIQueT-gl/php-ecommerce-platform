@@ -1,0 +1,1 @@
+<?php declare(strict_types=1);require_once __DIR__.'/../includes/admin.php';use App\Http\Controllers\Admin\StoreOrdersController;use App\Support\View;require_admin_capability('orders_manage');View::render('admin/orders.php',(new StoreOrdersController())->handle());

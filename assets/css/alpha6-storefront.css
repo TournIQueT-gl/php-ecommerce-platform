@@ -1,0 +1,68 @@
+/* Alpha 6.1: customer-first department navigation, backed by live department/category mapping. */
+.store-nav .alpha6-shop-menu{position:static;align-self:center;flex-shrink:0;font-size:12px}
+.alpha6-shop-menu>summary{list-style:none;cursor:pointer;padding:9px 13px;border:1px solid #e8ded2;border-radius:4px;font-weight:700;white-space:nowrap;background:#fffdfa;transition:background .18s,border-color .18s}
+.alpha6-shop-menu>summary::-webkit-details-marker,.alpha6-shop-categories-mobile>summary::-webkit-details-marker{display:none}
+.alpha6-shop-menu>summary span{margin-left:6px;display:inline-block;transition:transform .18s}
+.alpha6-shop-menu[open]>summary span{transform:rotate(180deg)}
+.alpha6-shop-menu>summary:hover,.alpha6-shop-menu[open]>summary{background:#f5f0e8;border-color:#b5a38b}
+.alpha6-shop-menu summary:focus-visible,.alpha6-shop-panel a:focus-visible{outline:2px solid #a27c49;outline-offset:3px}
+.alpha6-shop-panel{position:absolute;z-index:100;top:calc(100% + 1px);left:50%;transform:translateX(-50%);width:min(970px,calc(100vw - 38px));max-height:min(75vh,660px);overflow-y:auto;background:#fffdfa;border:1px solid #e6dcd0;box-shadow:0 20px 55px rgba(27,23,20,.15);padding:28px 32px 22px;border-radius:0 0 10px 10px}
+.alpha6-shop-panel-head{display:flex;justify-content:space-between;align-items:end;gap:20px;padding-bottom:20px;border-bottom:1px solid #e9e1d8}
+.alpha6-shop-panel-head>div{display:grid;gap:5px}
+.alpha6-shop-panel-head small{font-size:10px;letter-spacing:.19em;color:#956e42;font-weight:700}
+.alpha6-shop-panel-head strong{font:500 26px/1.2 var(--serif,Georgia,serif)}
+.alpha6-shop-panel-head>a,.alpha6-shop-panel-foot>a{font-size:12px;font-weight:700;color:#62492c;text-decoration:none;white-space:nowrap}
+.alpha6-shop-panel-head>a:hover,.alpha6-shop-panel-foot>a:hover{text-decoration:underline}
+.alpha6-shop-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 22px;padding:22px 0}
+.alpha6-shop-group{min-width:0;padding:13px 15px 16px;border-radius:6px;background:#faf7f3;border:1px solid transparent;transition:border-color .18s,background .18s}
+.alpha6-shop-group:hover{border-color:#e8d8c8;background:#fff}
+.alpha6-shop-group-title{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:14px;font-weight:700;color:#241d17!important;text-decoration:none!important}
+.alpha6-shop-group-title span{font-size:18px;font-weight:400;color:#9b7546}
+.alpha6-shop-category-links{display:grid;gap:7px;margin-top:9px}
+.alpha6-shop-category-links a{font-size:12px;color:#72685e!important;text-decoration:none!important;width:fit-content;max-width:100%;overflow-wrap:anywhere}
+.alpha6-shop-category-links a:hover{text-decoration:underline!important;color:#2a241d!important}
+.alpha6-shop-panel-foot{display:flex;gap:26px;align-items:center;border-top:1px solid #e9e1d8;padding-top:17px}
+.alpha6-shop-categories-mobile{display:none}
+.store-nav>.alpha6-department-shortcut{font-size:12px!important;white-space:nowrap}
+.store-nav>.alpha6-shop-all-shortcut{font-size:12px!important;white-space:nowrap}
+@media(max-width:1280px) and (min-width:901px){.store-nav>.alpha6-department-shortcut{display:none!important}}
+.alpha6-product-pricing{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:14px 0}
+.alpha6-product-pricing del{color:#938678;font-size:.93rem}
+.alpha6-discount-badge{font:700 12px/1.4 sans-serif;letter-spacing:.04em;color:#fff;background:#97583a;padding:5px 8px;border-radius:4px}
+.alpha6-product-pricing [hidden]{display:none!important}
+.alpha6-variant-axes{display:grid;gap:12px;margin:14px 0}
+.alpha6-variant-axis{border:0;padding:0;min-width:0;margin:0}
+.alpha6-variant-axis legend{text-transform:uppercase;letter-spacing:.12em;font:700 11px/1.5 sans-serif;margin-bottom:9px}
+.alpha6-variant-axis .variant-options{display:flex;flex-wrap:wrap;gap:8px}
+.alpha6-variant-axis .variant-option.is-unavailable:not(.is-active){opacity:.48;text-decoration:line-through}
+.alpha6-selection-status{font-size:12px;color:#75695d;margin:3px 0 12px}
+.alpha6-specifications{max-width:1100px;margin:30px auto;background:#fff;padding:32px;border:1px solid #e6dcd2}
+.alpha6-specifications h2{font:500 26px/1.25 Georgia,serif;margin:0 0 22px}
+.alpha6-specifications dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 30px;margin:0}
+.alpha6-specifications dl>div{display:flex;justify-content:space-between;align-items:start;gap:20px;padding:13px 0;border-bottom:1px solid #ece5de}
+.alpha6-specifications dt{color:#6c625b;font-size:13px}.alpha6-specifications dd{margin:0;text-align:right;font-size:13px;font-weight:600}
+@media(max-width:900px){
+.store-nav .alpha6-shop-menu{width:100%;align-self:stretch}
+.store-nav>.alpha6-department-shortcut,.store-nav>.alpha6-shop-all-shortcut{display:none!important}
+.alpha6-shop-menu>summary{padding:14px 0;border:none;border-bottom:1px solid #e8e1d8;background:transparent;border-radius:0;font-size:16px;display:flex;align-items:center;justify-content:space-between}
+.alpha6-shop-panel{position:static;transform:none;width:100%;max-height:none;overflow:visible;box-shadow:none;border:0;border-radius:0;padding:14px 0 6px;background:transparent}
+.alpha6-shop-panel-head{padding:0 0 14px;align-items:center}
+.alpha6-shop-panel-head strong{font-size:19px}
+.alpha6-shop-panel-head small{font-size:9px}
+.alpha6-shop-panel-head>a{font-size:12px;white-space:normal;text-align:right}
+.alpha6-shop-grid{grid-template-columns:1fr;gap:1px;padding:6px 0}
+.alpha6-shop-group{padding:10px 4px 9px;background:transparent;border:0;border-bottom:1px solid #eee7df;border-radius:0}
+.alpha6-shop-group:hover{border-color:#eee7df;background:transparent}
+.alpha6-shop-group-title{font-size:15px;min-height:38px}
+.alpha6-shop-group-title span{font-size:20px}
+.alpha6-shop-categories-desktop{display:none}
+.alpha6-shop-categories-mobile{display:block}
+.alpha6-shop-categories-mobile>summary{cursor:pointer;list-style:none;font-size:12px;font-weight:600;color:#82674a;padding:7px 0;display:flex;justify-content:space-between;align-items:center}
+.alpha6-shop-categories-mobile>summary span{transition:transform .18s}
+.alpha6-shop-categories-mobile[open]>summary span{transform:rotate(180deg)}
+.alpha6-shop-categories-mobile .alpha6-shop-category-links{padding:6px 0 12px 10px;gap:0;border-left:2px solid #e7dbcd}
+.alpha6-shop-categories-mobile .alpha6-shop-category-links a{display:block;width:100%;padding:10px 8px;font-size:13px;min-height:40px}
+.alpha6-shop-panel-foot{display:flex;justify-content:space-between;gap:12px}
+.alpha6-specifications{margin:25px 12px;padding:20px}
+}
+@media(max-width:550px){.alpha6-specifications dl{grid-template-columns:1fr}.alpha6-product-pricing{gap:8px}}

@@ -1,0 +1,422 @@
+/* RC7: One clean retail navigation presentation. Old dropdown declarations remain for
+   legacy mobile accordion support; all desktop popovers use this single final layer. */
+@media(min-width:901px){
+  .store-body.store-nav-rc7 .store-nav>.modern-nav-disclosure>.uc-retail-popover{
+    position:fixed!important;inset:auto!important;
+    top:var(--nav-popover-y,0px)!important;left:var(--nav-popover-x,0px)!important;
+    transform:none!important;margin:0!important;right:auto!important;bottom:auto!important;
+    width:min(calc(190px * var(--uc-cols,2) + 44px),calc(100vw - 32px))!important;
+    max-width:calc(100vw - 32px)!important;min-width:0!important;max-height:min(65dvh,490px)!important;
+    padding:15px 20px!important;border:1px solid #e5e2dd!important;
+    border-radius:13px!important;background:white!important;
+    box-shadow:0 20px 54px rgba(27,22,17,.13)!important;
+    overflow-y:auto!important;overscroll-behavior:contain;
+    transition:opacity .12s ease!important;opacity:0!important;visibility:hidden!important;
+    pointer-events:none!important;z-index:600!important;
+    text-align:start!important;white-space:normal!important;
+  }
+  .store-body.store-nav-rc7 .store-nav>.modern-nav-disclosure[open][data-nav-ready="1"]>.uc-retail-popover{
+    opacity:1!important;visibility:visible!important;pointer-events:auto!important;
+  }
+  .store-body.store-nav-rc7 .store-nav .uc-retail-popover .sc-shop-head{
+    display:flex!important;align-items:center!important;justify-content:space-between!important;
+    min-height:35px!important;gap:15px!important;padding:0 0 9px!important;margin:0 0 6px!important;
+    border-bottom:1px solid #e9e9e8!important;
+  }
+  .store-body.store-nav-rc7 .store-nav .uc-retail-popover .sc-shop-head strong{
+    font:650 14px/1.4 var(--sans,Arial,sans-serif)!important;color:#171717!important;
+  }
+  .store-body.store-nav-rc7 .store-nav .uc-retail-popover .sc-shop-head a,
+  .store-body.store-nav-rc7 .store-nav .uc-retail-popover .sc-audience-all{
+    font:600 12px/1.4 var(--sans,Arial,sans-serif)!important;text-decoration:none!important;
+    color:var(--gold,#8a673a)!important;
+  }
+  .store-body.store-nav-rc7 .store-nav .uc-retail-popover .sc-index-tabs{
+    margin:0 0 9px!important;padding:0!important;border-bottom:1px solid #eee!important;
+    display:flex!important;gap:21px!important;min-height:37px!important;
+  }
+  .store-body.store-nav-rc7 .store-nav .uc-retail-popover .sc-index-tabs button{
+    min-height:37px!important;padding:0 0 8px!important;border:0!important;border-radius:0!important;
+    background:none!important;color:#77716b!important;font:600 12px/1.4 var(--sans,Arial,sans-serif)!important;
+    cursor:pointer!important;
+  }
+  .store-body.store-nav-rc7 .store-nav .uc-retail-popover .sc-index-tabs button[aria-selected="true"]{
+    color:#151515!important;box-shadow:inset 0 -2px var(--gold,#8a673a)!important;
+  }
+  .store-body.store-nav-rc7 .store-nav .uc-retail-popover .sc-shop-grid,
+  .store-body.store-nav-rc7 .store-nav .uc-retail-popover.sc-style-mega .sc-shop-grid,
+  .store-body.store-nav-rc7 .store-nav .uc-retail-popover.sc-style-compact .sc-shop-grid,
+  .store-body.store-nav-rc7 .store-nav .uc-retail-audience{
+    display:grid!important;grid-template-columns:repeat(var(--uc-cols,2),minmax(0,1fr))!important;
+    gap:7px 20px!important;margin:0!important;padding:0!important;
+  }
+  .store-body.store-nav-rc7 .store-nav .uc-retail-popover .sc-shop-group,
+  .store-body.store-nav-rc7 .store-nav .uc-retail-popover .sc-audience-group{
+    padding:8px 1px!important;margin:0!important;border:0!important;
+    display:flex!important;flex-direction:column!important;gap:3px!important;min-width:0!important;
+    border-radius:0!important;background:transparent!important;
+  }
+  .store-body.store-nav-rc7 .store-nav .uc-retail-popover .sc-shop-group:hover{background:transparent!important}
+  .store-body.store-nav-rc7 .store-nav .uc-retail-popover .sc-department-title,
+  .store-body.store-nav-rc7 .store-nav .uc-retail-popover .sc-audience-department{
+    display:flex!important;align-items:center!important;justify-content:space-between!important;
+    min-height:29px!important;padding:2px 0!important;color:#191919!important;
+    font:650 13px/1.45 var(--sans,Arial,sans-serif)!important;
+    text-decoration:none!important;
+  }
+  .store-body.store-nav-rc7 .store-nav .uc-retail-popover .sc-category,
+  .store-body.store-nav-rc7 .store-nav .uc-retail-popover .sc-audience-group>a:not(.sc-audience-department){
+    display:block!important;min-height:24px!important;padding:4px 0!important;
+    font:400 12px/1.45 var(--sans,Arial,sans-serif)!important;
+    color:#686663!important;text-decoration:none!important;
+  }
+  .store-body.store-nav-rc7 .store-nav .uc-retail-popover a:hover{
+    color:var(--gold,#8a673a)!important;text-decoration:underline!important;text-underline-offset:3px;
+  }
+  .store-body.store-nav-rc7 .store-nav .uc-retail-popover .sc-audience-all{
+    grid-column:1/-1!important;display:flex!important;justify-content:space-between!important;
+    padding:0 0 11px!important;margin:0 0 5px!important;min-height:30px!important;
+    border-bottom:1px solid #e9e9e8!important;
+  }
+  .store-body.store-nav-rc7 .store-nav .uc-retail-popover .sc-brand-index{
+    display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:3px 14px!important;
+    align-items:start;margin:3px 0 9px!important;
+  }
+  .store-body.store-nav-rc7 .store-nav .uc-retail-popover .sc-brand-index a{
+    padding:7px 3px!important;font:500 12px/1.45 var(--sans,Arial,sans-serif)!important;
+    color:#34312e!important;text-decoration:none!important;overflow-wrap:anywhere!important;
+  }
+  .store-body.store-nav-rc7.store-nav-style-underline .store-nav>.modern-nav-disclosure>summary:hover,
+  .store-body.store-nav-rc7.store-nav-style-underline .store-nav>.sc-custom-link:hover{
+    box-shadow:inset 0 -2px var(--gold,#8a673a)!important;
+  }
+}
+@media(max-width:900px){
+  .store-body.store-nav-rc7 .store-nav .uc-retail-popover{visibility:visible;opacity:1;pointer-events:auto}
+  .store-body.store-nav-rc7 .store-nav .uc-retail-popover .sc-brand-index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 12px}
+}
+@media(prefers-reduced-motion:reduce){.store-body.store-nav-rc7 .store-nav .uc-retail-popover{transition:none!important}}
+
+/* The new theme controls apply ONLY to storefront catalog results. The Homepage
+   Builder maintains its own section column/hero settings. */
+.store-body.store-width-contained{--page-max:1240px}
+.store-body.store-width-wide{--page-max:1660px}
+@media(min-width:1101px){
+  .store-body.store-columns-3 .catalog-results .product-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  .store-body.store-columns-4 .catalog-results .product-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+  .store-body.store-columns-5 .catalog-results .product-grid{grid-template-columns:repeat(5,minmax(0,1fr))!important}
+}
+@media(min-width:761px) and (max-width:1100px){
+  .store-body[class*="store-columns-"] .catalog-results .product-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+}
+.store-body.store-photo-portrait .catalog-results .product-media{aspect-ratio:3/4!important}
+.store-body.store-photo-landscape .catalog-results .product-media{aspect-ratio:4/3!important}
+.store-body.store-photo-square .catalog-results .product-media{aspect-ratio:1!important}
+.store-body.store-fit-contain .catalog-results img.product-photo{object-fit:contain!important}
+.store-body.store-fit-cover .catalog-results img.product-photo{object-fit:cover!important}
+@media(max-width:760px){
+  .store-body[class*="store-columns-"] .catalog-results .product-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+/* Cover intentionally fills the media area; contain keeps protective white padding. */
+.store-body.store-fit-cover .catalog-results img.product-photo{padding:0!important}
+
+
+/* RC20: readable one-row retail header. Collapsed height is stable; the
+   secondary utility strip naturally scrolls away (hidden outright on mobile).
+   This overrides historic shrink-to-10px styles without changing nav data. */
+@media (min-width:901px){
+  .store-body.store-navigation-modern .store-header[data-store-header],
+  .store-body.store-navigation-modern.store-header-layout-centered .store-header[data-store-header],
+  .store-body.store-navigation-modern.store-header-layout-compact .store-header[data-store-header]{
+    grid-template-columns:minmax(132px, min(17vw,220px)) minmax(0,1fr) minmax(135px, min(19vw,270px)) max-content!important;
+    grid-template-rows:62px!important;height:62px!important;min-height:62px!important;max-height:62px!important;
+    gap:clamp(10px,1vw,20px)!important;padding:0 clamp(14px,2vw,34px)!important;
+    background:#fff!important;
+  }
+  .store-body.store-navigation-modern .store-header[data-store-header].is-scrolled,
+  .store-body.store-navigation-modern.store-header-layout-centered .store-header[data-store-header].is-scrolled,
+  .store-body.store-navigation-modern.store-header-layout-compact .store-header[data-store-header].is-scrolled{
+    height:52px!important;min-height:52px!important;max-height:52px!important;grid-template-rows:52px!important;
+  }
+  .store-body.store-navigation-modern .store-header>.store-logo span{font-size:clamp(18px,1.55vw,23px)!important;line-height:1.14!important;white-space:nowrap!important}
+  .store-body.store-navigation-modern .store-header.is-scrolled>.store-logo span{font-size:clamp(17px,1.35vw,21px)!important}
+  .store-body.store-navigation-modern .store-header>.store-logo{max-width:100%!important;overflow:hidden!important}
+  .store-body.store-navigation-modern .store-nav{gap:clamp(10px,1.15vw,20px)!important;justify-content:center!important}
+  .store-body.store-navigation-modern .store-nav>.modern-nav-disclosure>summary,
+  .store-body.store-navigation-modern .store-nav>.sc-custom-link{
+    font-size:clamp(12px,.93vw,14px)!important;font-weight:600!important;min-height:44px!important;padding:0 1px!important;
+  }
+  .store-body.store-navigation-modern .store-desktop-search{height:38px!important;max-width:100%!important;font-size:12px!important}
+  .store-body.store-navigation-modern .store-header.is-scrolled .store-desktop-search{height:34px!important}
+  .store-body.store-navigation-modern .store-header>.store-actions{gap:2px!important;white-space:nowrap}
+  .store-body.store-navigation-modern .store-header>.store-actions>.store-action{min-width:36px!important;width:36px!important;height:40px!important}
+  .store-body.store-navigation-modern .store-header .store-search-shortcut{display:none!important}
+  .store-body.store-navigation-modern .store-nav>.sc-more-menu{display:none!important}
+  /* One language control, not two competing EN / Arabic shortcuts. */
+  .store-body .store-language-menu{position:relative;flex:0 0 auto;z-index:92}
+  .store-body .store-language-menu>summary{cursor:pointer;display:flex;align-items:center;justify-content:center;gap:4px;min-height:38px;padding:0 7px;border:1px solid #e8e4df;border-radius:7px;font-size:12px;font-weight:700;list-style:none}
+  .store-body .store-language-menu>summary::-webkit-details-marker{display:none}
+  .store-body .store-language-menu>summary span{font-size:13px;color:#8b8278}
+  .store-body .store-language-menu .store-language-options{position:absolute;inset-block-start:calc(100% + 7px);inset-inline-end:0;display:grid;gap:3px;min-width:126px;padding:7px;background:white;border:1px solid #e8e1d9;border-radius:10px;box-shadow:0 12px 28px rgba(0,0,0,.13)}
+  .store-body .store-language-menu .store-language-options a{display:block;padding:9px 10px;font-size:13px;border-radius:6px}
+  .store-body .store-language-menu .store-language-options a:hover,.store-body .store-language-menu .store-language-options a[aria-current=true]{background:#f4f0e9}
+  .store-body .store-nav>.sc-more-menu>.sc-more-panel{width:min(190px,calc(100vw - 32px))!important;display:grid!important;grid-template-columns:1fr!important;gap:2px!important;padding:10px!important}
+  .store-body .store-nav .sc-more-panel a{display:block;padding:10px 12px!important;min-height:40px;font-size:13px!important;border-radius:7px}
+  .store-body .store-nav .sc-more-panel a:hover{background:#f7f3ee}
+}
+@media(min-width:901px) and (max-width:1399px){
+  .store-body.store-navigation-modern .store-nav>.sc-custom-link.sc-link-desktop{display:none!important}
+  .store-body.store-navigation-modern .store-nav>.sc-more-menu{display:block!important}
+}
+@media(min-width:901px) and (max-width:1150px){
+  .store-body.store-navigation-modern .store-header[data-store-header],
+  .store-body.store-navigation-modern.store-header-layout-centered .store-header[data-store-header],
+  .store-body.store-navigation-modern.store-header-layout-compact .store-header[data-store-header]{
+    grid-template-columns:minmax(115px,145px) minmax(0,1fr) minmax(128px,170px) max-content!important;
+    gap:7px!important;padding-inline:12px!important;
+  }
+  .store-body.store-navigation-modern .store-nav{gap:8px!important}
+  .store-body.store-navigation-modern .store-header>.store-logo span{font-size:17px!important}
+  .store-body.store-navigation-modern .store-nav>.modern-nav-disclosure>summary{font-size:12px!important}
+  .store-body.store-navigation-modern .store-header>.store-actions>.store-action{width:32px!important;min-width:32px!important}
+}
+@media(max-width:900px){
+  .store-body .store-utility-bar{display:none!important}
+  .store-body.store-navigation-modern .store-header[data-store-header],
+  .store-body.store-navigation-modern.store-header-layout-centered .store-header[data-store-header],
+  .store-body.store-navigation-modern.store-header-layout-compact .store-header[data-store-header]{
+    height:56px!important;min-height:56px!important;max-height:56px!important;
+    grid-template-rows:56px!important;grid-template-columns:44px minmax(0,1fr) 96px!important;
+    gap:6px!important;padding:0 12px!important;
+  }
+  .store-body.store-navigation-modern .store-header[data-store-header].is-scrolled,
+  .store-body.store-navigation-modern.store-header-layout-centered .store-header[data-store-header].is-scrolled,
+  .store-body.store-navigation-modern.store-header-layout-compact .store-header[data-store-header].is-scrolled{
+    height:48px!important;min-height:48px!important;max-height:48px!important;grid-template-rows:48px!important;
+  }
+  .store-body.store-navigation-modern .store-header>.store-logo span{font-size:clamp(16px,3.8vw,20px)!important}
+  .store-body.store-navigation-modern .store-header>.store-actions{gap:2px!important}
+  .store-body.store-navigation-modern .store-header>.store-actions>.store-action{width:44px!important;min-width:44px!important;min-height:44px!important;height:44px!important;display:grid!important}
+  .store-body.store-navigation-modern .store-header>.store-actions>.store-search-action{display:grid!important}
+  .store-body.store-navigation-modern .store-header>.store-actions>.store-account-action,
+  .store-body.store-navigation-modern .store-header>.store-actions>.store-wishlist-action,
+  .store-body.store-navigation-modern .store-header>.store-actions>.store-language-menu{display:none!important}
+  .store-body.store-navigation-modern .store-header>.store-menu-button{width:44px!important;height:44px!important}
+  .store-body.store-navigation-modern .store-header>.store-actions>.store-cart-link b{top:1px;right:-1px;min-width:17px;height:17px;font-size:10px}
+  html[dir=rtl] .store-body.store-navigation-modern .store-header>.store-actions>.store-cart-link b{right:auto;left:-1px}
+  .store-body.store-navigation-modern .store-nav>.sc-more-menu{display:none!important}
+}
+@media(max-width:350px){
+  .store-body.store-navigation-modern .store-header[data-store-header]{padding-inline:7px!important;gap:3px!important}
+  .store-body.store-navigation-modern .store-header>.store-logo span{font-size:15px!important}
+}
+
+/* RC22 — all links stay visible as individual navigation items on scroll.
+   The old RC21 Shop-only consolidation has been removed. Preserve the
+   original published links, shrink type, gaps, search and controls together.
+   Keep compact-state sizes independent of sticky-header height measurements. */
+@media(min-width:901px){
+  .store-body.store-navigation-modern .store-header[data-store-header].is-scrolled,
+  .store-body.store-navigation-modern.store-header-layout-compact .store-header[data-store-header].is-scrolled,
+  .store-body.store-navigation-modern.store-header-layout-centered .store-header[data-store-header].is-scrolled{
+    grid-template-columns:minmax(105px, min(13vw,175px)) minmax(0,1fr) minmax(105px, min(15vw,208px)) max-content!important;
+    grid-template-rows:46px!important;height:46px!important;min-height:46px!important;max-height:46px!important;
+    column-gap:clamp(5px,.7vw,12px)!important;padding-inline:clamp(10px,1.4vw,22px)!important;
+  }
+  .store-body.store-navigation-modern .store-header.is-scrolled>.store-logo{align-self:center!important;line-height:1!important;overflow:visible!important}
+  .store-body.store-navigation-modern .store-header.is-scrolled>.store-logo span{
+    font-size:clamp(14px,1.12vw,17px)!important;line-height:1.05!important;letter-spacing:-.02em!important;
+  }
+  .store-body.store-navigation-modern .store-header.is-scrolled>.store-nav{
+    display:flex!important;align-items:center!important;justify-content:center!important;
+    position:relative!important;left:auto!important;right:auto!important;top:auto!important;
+    transform:none!important;grid-column:2!important;grid-row:1!important;
+    height:46px!important;width:100%!important;max-width:100%!important;
+    gap:clamp(4px,.52vw,10px)!important;overflow:visible!important;white-space:nowrap!important;
+  }
+  .store-body.store-navigation-modern .store-header.is-scrolled>.store-nav>.modern-nav-disclosure.sc-link-desktop,
+  .store-body.store-navigation-modern .store-header.is-scrolled>.store-nav>.sc-custom-link.sc-link-desktop{
+    display:flex!important;align-items:center!important;flex:0 0 auto!important;
+    min-height:34px!important;height:34px!important;margin:0!important;padding-inline:1px!important;
+    white-space:nowrap!important;
+  }
+  .store-body.store-navigation-modern .store-header.is-scrolled>.store-nav>.modern-nav-disclosure>summary,
+  .store-body.store-navigation-modern .store-header.is-scrolled>.store-nav>.sc-custom-link{
+    display:flex!important;align-items:center!important;gap:2px!important;
+    min-height:34px!important;padding-inline:1px!important;
+    font-size:clamp(10px,.76vw,12px)!important;line-height:1.15!important;font-weight:600!important;
+    white-space:nowrap!important;
+  }
+  .store-body.store-navigation-modern .store-header.is-scrolled>.store-nav .sc-caret{font-size:10px!important;margin-inline-start:1px!important}
+  .store-body.store-navigation-modern .store-header.is-scrolled>.store-desktop-search{
+    height:28px!important;min-height:28px!important;padding-inline:9px!important;
+    font-size:10px!important;border-radius:16px!important;min-width:0!important;
+  }
+  .store-body.store-navigation-modern .store-header.is-scrolled>.store-desktop-search input{font-size:10px!important;min-width:0!important}
+  .store-body.store-navigation-modern .store-header.is-scrolled>.store-desktop-search svg{width:14px!important;height:14px!important;flex:0 0 14px!important}
+  .store-body.store-navigation-modern .store-header.is-scrolled>.store-actions{gap:0!important;align-items:center!important}
+  .store-body.store-navigation-modern .store-header.is-scrolled>.store-actions>.store-action{
+    width:31px!important;min-width:31px!important;height:34px!important;padding:6px!important;
+  }
+  .store-body.store-navigation-modern .store-header.is-scrolled>.store-actions .store-language-menu>summary{
+    min-height:30px!important;padding-inline:5px!important;font-size:10px!important;
+  }
+  .store-body.store-navigation-modern .store-header.is-scrolled>.store-actions .store-action svg{width:16px!important;height:16px!important}
+  .store-body.store-navigation-modern .store-header.is-scrolled>.store-actions>.store-cart-link b{min-width:16px!important;height:16px!important;font-size:10px!important}
+  /* More was a historical narrow-laptop fallback. RC22 keeps actual links
+     visible; the menu is no longer needed at any desktop width. */
+  .store-body.store-navigation-modern .store-header .store-nav>.sc-more-menu{display:none!important}
+}
+@media(min-width:901px) and (max-width:1399px){
+  .store-body.store-navigation-modern .store-header .store-nav>.sc-custom-link.sc-link-desktop{display:flex!important}
+  .store-body.store-navigation-modern .store-header .store-nav>.sc-more-menu{display:none!important}
+}
+@media(min-width:901px) and (max-width:1150px){
+  .store-body.store-navigation-modern .store-header[data-store-header],
+  .store-body.store-navigation-modern.store-header-layout-centered .store-header[data-store-header],
+  .store-body.store-navigation-modern.store-header-layout-compact .store-header[data-store-header]{
+    grid-template-columns:minmax(105px,128px) minmax(0,1fr) minmax(95px,135px) max-content!important;
+    column-gap:5px!important;padding-inline:9px!important;
+  }
+  .store-body.store-navigation-modern .store-header .store-nav{gap:clamp(4px,.55vw,7px)!important}
+  .store-body.store-navigation-modern .store-header .store-nav>.modern-nav-disclosure>summary,
+  .store-body.store-navigation-modern .store-header .store-nav>.sc-custom-link{font-size:clamp(10px,1vw,12px)!important}
+  .store-body.store-navigation-modern .store-header.is-scrolled>.store-nav{gap:4px!important}
+  .store-body.store-navigation-modern .store-header.is-scrolled>.store-nav>.modern-nav-disclosure>summary,
+  .store-body.store-navigation-modern .store-header.is-scrolled>.store-nav>.sc-custom-link{font-size:10px!important}
+  .store-body.store-navigation-modern .store-header.is-scrolled>.store-desktop-search{height:27px!important}
+  .store-body.store-navigation-modern .store-header.is-scrolled>.store-logo span{font-size:14px!important}
+}
+@media(min-width:1280px){
+  /* CSS grid handles the compact state; don't absolutely position the links
+     over the logo or search when shrinking. */
+  .store-body.store-navigation-modern .store-header.is-scrolled>.store-nav{
+    position:relative!important;left:auto!important;right:auto!important;transform:none!important;
+    grid-column:2!important;width:100%!important;max-width:100%!important;
+  }
+}
+/* A genuinely centered mobile logo: independent of the differently sized
+   menu and right-hand action cluster. Retain full-size touch controls. */
+@media(max-width:900px){
+  .store-body.store-navigation-modern .store-header>.store-logo,
+  .store-body.store-navigation-modern.store-header-layout-centered .store-header>.store-logo{
+    position:absolute!important;left:50%!important;right:auto!important;top:50%!important;
+    transform:translate(-50%,-50%)!important;grid-column:auto!important;
+    width:max-content!important;max-width:calc(100vw - 205px)!important;
+    display:flex!important;align-items:center!important;justify-content:center!important;
+    text-align:center!important;z-index:1!important;
+  }
+  .store-body.store-navigation-modern .store-header>.store-logo span{
+    font-size:clamp(16px,3.75vw,19px)!important;line-height:1.1!important;
+  }
+  .store-body.store-navigation-modern .store-header.is-scrolled>.store-logo span{
+    font-size:clamp(14px,3.35vw,17px)!important;
+  }
+  .store-body.store-navigation-modern .store-header>.store-menu-button,
+  .store-body.store-navigation-modern .store-header>.store-actions{
+    position:relative!important;z-index:2!important;
+  }
+  .store-body.store-navigation-modern .store-header.is-scrolled .store-menu-button svg,
+  .store-body.store-navigation-modern .store-header.is-scrolled .store-actions .store-action svg{
+    width:18px!important;height:18px!important;
+  }
+}
+@media(max-width:360px){
+  .store-body.store-navigation-modern .store-header>.store-logo,
+  .store-body.store-navigation-modern.store-header-layout-centered .store-header>.store-logo{
+    max-width:calc(100vw - 190px)!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){.store-body.store-navigation-modern .store-header{transition:none!important}}
+
+
+/* RC23: measured, smooth compact header. Keep all six published navigation
+   destinations visible; do not toggle display/layout of controls on scroll.
+   Desktop search is a real input; suggestions open only for real matches. */
+@media(min-width:901px){
+  .store-body.store-navigation-modern .store-header[data-store-header]{
+    transition:height .34s cubic-bezier(.4,0,.2,1),
+      min-height .34s cubic-bezier(.4,0,.2,1),
+      max-height .34s cubic-bezier(.4,0,.2,1),
+      grid-template-rows .34s cubic-bezier(.4,0,.2,1),
+      box-shadow .32s ease!important;
+  }
+  .store-body.store-navigation-modern .store-header>.store-logo span{
+    transition:font-size .34s cubic-bezier(.4,0,.2,1),letter-spacing .32s ease!important;
+  }
+  .store-body.store-navigation-modern .store-header>.store-nav{
+    transition:gap .34s cubic-bezier(.4,0,.2,1)!important;
+  }
+  .store-body.store-navigation-modern .store-header>.store-nav>.modern-nav-disclosure>summary,
+  .store-body.store-navigation-modern .store-header>.store-nav>.sc-custom-link{
+    transition:font-size .34s cubic-bezier(.4,0,.2,1),
+      min-height .34s cubic-bezier(.4,0,.2,1),
+      color .18s ease!important;
+  }
+  .store-body.store-navigation-modern .store-header>.store-desktop-search{
+    transition:height .34s cubic-bezier(.4,0,.2,1),
+      min-height .34s cubic-bezier(.4,0,.2,1),
+      padding .34s cubic-bezier(.4,0,.2,1),
+      border-color .18s ease!important;
+  }
+  .store-body.store-navigation-modern .store-header>.store-desktop-search input,
+  .store-body.store-navigation-modern .store-header>.store-actions .store-action svg{
+    transition:font-size .34s cubic-bezier(.4,0,.2,1),
+      width .34s cubic-bezier(.4,0,.2,1),
+      height .34s cubic-bezier(.4,0,.2,1)!important;
+  }
+  .store-body.store-navigation-modern .store-header>.store-actions>.store-action,
+  .store-body.store-navigation-modern .store-header>.store-actions .store-language-menu>summary{
+    transition:width .34s cubic-bezier(.4,0,.2,1),
+      min-width .34s cubic-bezier(.4,0,.2,1),
+      height .34s cubic-bezier(.4,0,.2,1),
+      padding .34s cubic-bezier(.4,0,.2,1)!important;
+  }
+  /* Changing grid column widths on scroll caused a sudden jump even when
+     the outer height was animated. Keep geometry constant and shrink content. */
+  .store-body.store-navigation-modern .store-header[data-store-header].is-scrolled,
+  .store-body.store-navigation-modern.store-header-layout-centered .store-header[data-store-header].is-scrolled,
+  .store-body.store-navigation-modern.store-header-layout-compact .store-header[data-store-header].is-scrolled{
+    grid-template-columns:minmax(132px,min(17vw,220px)) minmax(0,1fr) minmax(135px,min(19vw,270px)) max-content!important;
+  }
+  /* Empty popular-search container stays visually absent on desktop.
+     Results are shown only when the search API returns matches. */
+  .store-body.store-navigation-modern .store-search-drawer .store-search-suggestions,
+  .store-body.store-navigation-modern .store-search-drawer .store-search-status{display:none!important}
+  .store-body.store-navigation-modern .store-search-drawer .store-search-live{margin:0!important;border-top:0!important}
+  .store-body.store-navigation-modern .store-search-drawer{padding:7px 14px 10px!important}
+}
+@media(min-width:901px) and (max-width:1150px){
+  .store-body.store-navigation-modern .store-header[data-store-header].is-scrolled,
+  .store-body.store-navigation-modern.store-header-layout-centered .store-header[data-store-header].is-scrolled,
+  .store-body.store-navigation-modern.store-header-layout-compact .store-header[data-store-header].is-scrolled{
+    grid-template-columns:minmax(105px,128px) minmax(0,1fr) minmax(95px,135px) max-content!important;
+  }
+}
+@media(max-width:900px){
+  .store-body.store-navigation-modern .store-header[data-store-header]{
+    transition:height .34s cubic-bezier(.4,0,.2,1),
+      min-height .34s cubic-bezier(.4,0,.2,1),
+      max-height .34s cubic-bezier(.4,0,.2,1),
+      grid-template-rows .34s cubic-bezier(.4,0,.2,1),
+      box-shadow .32s ease!important;
+  }
+  .store-body.store-navigation-modern .store-header>.store-logo span,
+  .store-body.store-navigation-modern .store-header .store-action svg{
+    transition:font-size .34s cubic-bezier(.4,0,.2,1),
+      width .34s cubic-bezier(.4,0,.2,1),
+      height .34s cubic-bezier(.4,0,.2,1)!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .store-body.store-navigation-modern .store-header[data-store-header],
+  .store-body.store-navigation-modern .store-header>.store-logo span,
+  .store-body.store-navigation-modern .store-header>.store-nav,
+  .store-body.store-navigation-modern .store-header>.store-nav>.modern-nav-disclosure>summary,
+  .store-body.store-navigation-modern .store-header>.store-nav>.sc-custom-link,
+  .store-body.store-navigation-modern .store-header>.store-desktop-search,
+  .store-body.store-navigation-modern .store-header>.store-actions .store-action,
+  .store-body.store-navigation-modern .store-header>.store-actions .store-action svg{
+    transition:none!important;
+  }
+}

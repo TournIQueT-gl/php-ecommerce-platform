@@ -1,0 +1,23 @@
+name: Source syntax checks
+on:
+  push:
+  pull_request:
+jobs:
+  php-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          coverage: none
+      - name: Lint PHP source
+        shell: bash
+        run: find . -type f -name '*.php' -print0 | xargs -0 -n1 php -l
+  javascript-syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check source JavaScript syntax
+        shell: bash
+        run: find assets -type f -name '*.js' -print0 | xargs -0 -n1 node --check

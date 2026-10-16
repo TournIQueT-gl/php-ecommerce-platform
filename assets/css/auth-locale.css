@@ -1,0 +1,8 @@
+/* Alpha 7.5: localized sign-in/register; keep credentials and email LTR. */
+.auth-languages{display:flex;gap:12px;align-items:center;margin-inline-start:auto}
+.auth-languages a{color:inherit;text-decoration:none;font-weight:600;font-size:.78rem;opacity:.72;padding:8px}
+.auth-languages a[aria-current=true]{opacity:1;text-decoration:underline;text-underline-offset:4px}
+html[dir=rtl] .auth-page{direction:rtl;font-family:"Cairo",Tahoma,Arial,sans-serif}
+html[dir=rtl] .auth-panel,html[dir=rtl] .auth-intro,html[dir=rtl] .auth-header{text-align:start}
+html[dir=rtl] .auth-form input[type=password],html[dir=rtl] .auth-form input[type=email],html[dir=rtl] .auth-form input[name=username]{direction:ltr;text-align:left}
+@media(max-width:760px){.auth-languages{gap:4px}.auth-languages a{padding:4px;font-size:.7rem}}

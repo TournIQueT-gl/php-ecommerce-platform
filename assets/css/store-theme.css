@@ -1,0 +1,45 @@
+/* Alpha 7: only loaded after a validated published theme exists. */
+.store-body.store-theme-modern{--serif:"DM Sans",Arial,sans-serif;--sans:"DM Sans",Arial,sans-serif}
+.store-body.store-theme-system{--serif:Georgia,serif;--sans:Arial,Helvetica,sans-serif}
+.store-body.store-theme-editorial{--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",Arial,sans-serif}
+.store-body.store-density-compact{--gutter:clamp(14px,2vw,32px)}
+.store-body.store-density-spacious{--gutter:clamp(24px,4vw,64px)}
+.store-body.store-density-compact .store-section:not(.builder-section){padding-block:clamp(22px,3vw,42px)}
+.store-body.store-density-spacious .store-section:not(.builder-section){padding-block:clamp(48px,5vw,80px)}
+.store-body.store-density-compact .product-grid{gap:12px}
+.store-body.store-density-spacious .product-grid{gap:28px}
+.store-body.store-density-compact .product-info{padding:12px}
+.store-body.store-density-spacious .product-info{padding:22px}
+.store-body[class*="store-theme-"] .store-header{background:#fff}
+.store-body[class*="store-theme-"] .store-primary-button,.store-body[class*="store-theme-"] .product-card{border-radius:var(--store-card-radius)}
+@media(max-width:760px){.store-body.store-density-spacious{--gutter:18px}.store-body.store-density-spacious .product-grid{gap:12px}}
+
+/* RC5: published layouts affect actual rendered pages. No database/catalog changes. */
+@media(min-width:761px){
+ .store-front-layout-editorial .products-section .section-heading h2{font-family:var(--serif)}
+ .store-front-layout-boutique .catalog-hero{padding-block:clamp(22px,4vw,54px)}
+ .store-front-layout-catalog .catalog-results .product-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+ .store-front-layout-catalog .products-section .product-card,
+ .store-front-layout-catalog .catalog-results .product-card{border:1px solid #e7e4df;border-radius:5px}
+ .store-front-layout-catalog .products-section .product-info,
+ .store-front-layout-catalog .catalog-results .product-info{padding:12px}
+}
+@media(min-width:761px) and (max-width:1100px){
+ .store-front-layout-catalog .catalog-results .product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:760px){
+ .store-front-layout-catalog .catalog-results .product-grid{gap:10px}
+}
+/* RC5 product detail treatment follows the selected store layout. */
+@media(min-width:1101px){
+ .store-front-layout-editorial .product-detail{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(28px,4vw,72px)}
+ .store-front-layout-boutique .product-detail{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(22px,3vw,48px)}
+ .store-front-layout-catalog .product-detail{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(16px,2.2vw,36px)}
+ .store-front-layout-catalog .product-detail-copy h1{font-family:var(--sans);font-size:clamp(28px,3vw,42px)}
+}
+
+/* RC6 ownership: Theme Studio styles visual treatments only. Homepage Builder owns
+   each builder-section's grid columns, hero dimensions, layout and spacing. */
+.store-front-layout-editorial .builder-section .section-heading h2{font-family:var(--serif)}
+.store-front-layout-boutique .builder-section .category-card{border-radius:var(--store-card-radius,8px)}
+.store-front-layout-catalog .builder-section .product-card{border:1px solid #e7e4df}

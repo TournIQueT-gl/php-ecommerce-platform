@@ -1,0 +1,23 @@
+name: Feature request
+description: Propose an improvement to the project
+title: "[Feature]: "
+labels: ["enhancement", "needs triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem
+      description: Explain what a merchant or developer cannot currently do.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: Include expected behavior, tradeoffs and compatibility impact.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria and suggested tests

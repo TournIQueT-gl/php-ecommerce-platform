@@ -1,0 +1,28 @@
+/* Alpha 7.2: navigation and media editing inside the universal product workspace. */
+.uc72-editor-nav {position:sticky;top:58px;z-index:3;display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;padding:10px;border:1px solid var(--border-color,#ddd);border-radius:12px;background:var(--admin-card-bg,#fff)}
+.uc72-editor-nav a {display:inline-flex;padding:8px 13px;border:1px solid #ddd;border-radius:9px;text-decoration:none;color:inherit;font-size:13px;font-weight:600}
+.uc72-editor-nav a:hover,.uc72-editor-nav a:focus-visible {border-color:#887354;background:#f8f4ed}
+.uc72-media-section {margin:20px 0;padding:18px;border-radius:14px;border:1px solid #ddd;background:#fcfcfc;scroll-margin-top:120px}
+.uc72-section-intro {display:flex;align-items:start;justify-content:space-between;gap:14px;margin-bottom:12px}
+.uc72-section-intro strong{font-size:17px}.uc72-section-intro p{font-size:13px;line-height:1.5;color:#666;margin:6px 0}
+.uc72-media-count{white-space:nowrap;color:#555;font-size:13px}.uc72-gallery-grid{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}
+.uc72-gallery-card {width:min(100%,180px);border:1px solid #ddd;background:white;border-radius:10px;padding:8px}
+.uc72-gallery-card.is-removed{opacity:.32;text-decoration:line-through}.uc72-gallery-card.is-main{outline:2px solid #836c45}
+.uc72-gallery-card img,.uc72-pending-photos img {width:100%;aspect-ratio:1/1;object-fit:contain;background:#fff;border-radius:6px}
+.uc72-gallery-actions{display:flex;gap:4px;flex-wrap:wrap;margin-top:7px}.uc72-gallery-actions button{border:1px solid #ddd;border-radius:5px;background:#fff;padding:5px 7px;cursor:pointer;font-size:11px}
+.uc72-gallery-actions button:focus-visible{outline:2px solid #836c45}.uc72-remove-main{display:inline-flex;align-items:center;gap:8px;font-size:13px;margin:8px 0}
+.uc72-upload-label{display:inline-flex;align-items:center;gap:8px;cursor:pointer;padding:11px;border:1px dashed #aaa;border-radius:9px;font-weight:600;font-size:13px}
+.uc72-upload-label input{max-width:260px}.uc72-pending-photos{display:flex;gap:9px;flex-wrap:wrap}.uc72-pending-photos img{width:145px;border:1px dashed #aaa;padding:7px}
+[data-uc-gallery-feedback].is-error{color:#a32727;font-weight:600}
+#uc-product-variants,#uc-product-inventory,#uc-product-specifications{scroll-margin-top:120px}
+@media(max-width:760px){.uc72-editor-nav{position:static}.uc72-gallery-card{width:calc(50% - 8px)}.uc72-upload-label{display:flex;flex-wrap:wrap}}
+
+/* Alpha 7.3: SKU gallery is scoped to each variant form. */
+.uc-variant-card .uc73-sku-media{grid-column:1/-1;padding:14px;border:1px solid var(--border, #dad9d6);border-radius:12px;display:grid;gap:12px;min-width:0}
+.uc73-sku-media-title{display:flex;flex-direction:column;gap:4px}.uc73-sku-media-title small{opacity:.75}
+.uc73-sku-media [data-uc-gallery-grid]{display:flex;flex-wrap:wrap;gap:12px}
+.uc73-sku-media .uc72-gallery-card{width:min(175px,100%)}
+.uc73-sku-media .uc-photo-preview{max-width:180px;max-height:180px;object-fit:contain;display:block}
+.uc73-sku-media .uc-photo-preview[hidden]{display:none}
+.uc73-sku-media [data-uc-gallery-pending] img{max-width:90px;max-height:90px;object-fit:cover}
+.uc73-remove{display:flex;align-items:center;gap:8px}

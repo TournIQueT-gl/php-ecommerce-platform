@@ -1,0 +1,33 @@
+/* Alpha 7.4: opt-in Arabic storefront. Keep SKUs, emails, quantities and codes LTR. */
+.store-language-switch{display:inline-flex;align-items:center;gap:5px;white-space:nowrap;direction:ltr}
+.store-language-switch a{display:inline-block;padding:4px 8px;border-radius:6px;text-decoration:none;color:inherit;font-size:12px;font-weight:700;line-height:1.4}
+.store-language-switch a[aria-current=true]{background:var(--ivory,#f5eee4);color:var(--ink,#212020);outline:1px solid rgba(100,85,65,.3)}
+.store-language-header{margin-inline:5px}
+html[dir=rtl]{direction:rtl}html[dir=rtl] body.store-body{font-family:'Cairo','Noto Sans Arabic',Tahoma,Arial,sans-serif}
+html[dir=rtl] .store-logo,html[dir=rtl] .store-main,html[dir=rtl] .store-footer,html[dir=rtl] .catalog-layout,html[dir=rtl] .product-detail,html[dir=rtl] .checkout-shell{direction:rtl}
+html[dir=rtl] .breadcrumbs,html[dir=rtl] .store-nav,html[dir=rtl] .store-search-drawer,html[dir=rtl] .section-heading,html[dir=rtl] .product-info,html[dir=rtl] .checkout-panel{text-align:start}
+html[dir=rtl] .store-search-form input,html[dir=rtl] .catalog-filter input[type=search],html[dir=rtl] .checkout-field input,html[dir=rtl] .checkout-field textarea{text-align:start}
+html[dir=rtl] input[type=email],html[dir=rtl] input[type=tel],html[dir=rtl] input[type=number],html[dir=rtl] .product-price,html[dir=rtl] .product-price-old,html[dir=rtl] .product-sticky-price{direction:ltr;unicode-bidi:isolate}
+html[dir=rtl] .alpha6-shop-panel,html[dir=rtl] .sc-shop-panel,html[dir=rtl] .store-nav{direction:rtl}
+html[dir=rtl] .product-card,html[dir=rtl] .cart-line,html[dir=rtl] .cart-summary{text-align:start}
+html[dir=rtl] .store-language-switch{direction:ltr}
+@media(max-width:760px){.store-language-header{display:none}.store-language-switch a{padding:7px 9px}html[dir=rtl] .store-nav{direction:rtl}html[dir=rtl] .catalog-filter{direction:rtl}}
+
+/* Alpha 7.8: mobile Arabic layout hardening. Scoped to Arabic only. */
+html[lang="ar"]{text-size-adjust:100%;-webkit-text-size-adjust:100%}
+html[dir="rtl"] body.store-body{overflow-x:clip;text-align:start}
+html[dir="rtl"] :where(.store-main,.store-footer,.store-nav,.store-header,.catalog-layout,.catalog-filter,.product-detail,.checkout-shell,.account-shell){min-width:0}
+html[dir="rtl"] :where(.store-main,.store-footer,.catalog-layout,.product-detail,.checkout-shell) :where(h1,h2,h3,p,span,a,button,label){overflow-wrap:break-word}
+html[dir="rtl"] :where(input,textarea,select){max-width:100%;box-sizing:border-box}
+html[dir="rtl"] :where(input[type="email"],input[type="tel"],input[type="url"],input[type="number"],input[name="sku"],input[name="coupon"]){direction:ltr;text-align:left;unicode-bidi:isolate}
+html[dir="rtl"] :where(.store-language-switch,.product-sku,.order-number,.tracking-number){direction:ltr;unicode-bidi:isolate}
+html[dir="rtl"] :where(.catalog-filter,.filter-block,.filter-option,.catalog-filter-head,.catalog-filter-actions,.breadcrumbs,.store-footer,.checkout-panel){text-align:start}
+html[dir="rtl"] :where(.filter-option,.catalog-filter-head,.catalog-filter-actions){min-width:0}
+@media(max-width:760px){
+ html[dir="rtl"] :where(.store-header,.store-nav,.store-main,.store-footer,.catalog-layout,.checkout-shell,.product-detail){max-width:100%;min-width:0}
+ html[dir="rtl"] :where(.store-nav,.store-mobile-menu,.store-drawer,.catalog-filter,.catalog-filter-panel){direction:rtl;text-align:right}
+ html[dir="rtl"] :where(.store-nav a,.store-mobile-menu a,.store-drawer a,.catalog-filter label,.catalog-filter button){white-space:normal;overflow-wrap:anywhere}
+ html[dir="rtl"] :where(.store-nav,.store-mobile-menu,.store-drawer) :where(ul,li){max-width:100%;min-width:0}
+ html[dir="rtl"] :where(.catalog-filter,.catalog-filter-panel,.store-mobile-menu,.store-drawer){box-sizing:border-box}
+ html[dir="rtl"] :where(.store-footer,.store-footer *){min-width:0}
+}

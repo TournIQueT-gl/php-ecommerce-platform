@@ -1,0 +1,90 @@
+Options -Indexes -MultiViews
+DirectoryIndex index.php
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Never serve deployment secrets, database dumps, logs, keys, environment files or backups.
+<FilesMatch "(?i)(^\.|\.(?:sql|log|md|bak|old|orig|env|ini|key|pem|pfx|zip|7z|rar|tgz|gz|tar|db|sqlite|sqlite3|dump|backup)$|^README(?:[-.].*)?$|^composer\.(?:json|lock)$)">
+    Require all denied
+</FilesMatch>
+
+# Deployment/release documentation is not public website content.
+<FilesMatch "(?i)^(?:DEPLOY|RELEASE|AUDIT|RESTORE|SEO).*\.txt$">
+    Require all denied
+</FilesMatch>
+
+# Internal operator documentation is never public website content (robots.txt remains public).
+<FilesMatch "(?i)^(?!robots\.txt$).+\.txt$">
+    Require all denied
+</FilesMatch>
+
+# Friendly browser error pages.
+ErrorDocument 400 /400.php
+ErrorDocument 401 /401.php
+ErrorDocument 403 /403.php
+ErrorDocument 404 /404.php
+ErrorDocument 405 /405.php
+ErrorDocument 429 /429.php
+ErrorDocument 500 /500.php
+ErrorDocument 503 /503.php
+
+
+# Production static-asset caching and compression. Safe no-ops when modules are unavailable.
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 30 days"
+    ExpiresByType image/png "access plus 30 days"
+    ExpiresByType image/webp "access plus 30 days"
+    ExpiresByType image/gif "access plus 30 days"
+    ExpiresByType image/svg+xml "access plus 30 days"
+    ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json application/xml image/svg+xml
+</IfModule>
+
+<IfModule mod_headers.c>
+    # CSS/JS URLs are fingerprinted with a file-content digest by asset_url(), so they can be
+    # cached immutably without serving stale code after a deployment.
+    <FilesMatch "\.(?:css|js)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+</IfModule>
+
+RewriteEngine On
+
+
+# Public XML sitemap.
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
+# Explicit root fallback for shared hosts that do not honor DirectoryIndex consistently.
+RewriteRule ^$ index.php [L]
+
+# Internal application files are never web-accessible.
+RewriteRule ^(?:app|bin|config|database|includes|storage|tests|vendor|views)(?:/|$) - [F,L]
+
+# Redirect browser-facing .php URLs to extensionless equivalents.
+# Capturing the original request keeps this correct whether the site is at / or in a subdirectory.
+# THE_REQUEST prevents redirects after an internal rewrite.
+# Canonicalize browser navigation only. State-changing POST requests may target
+# physical PHP entry files directly so they remain reliable on shared hosts whose
+# rewrite layer does not consistently route POST requests to extensionless paths.
+RewriteCond %{REQUEST_METHOD} ^(?:GET|HEAD)$ [NC]
+RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.php(?:[?[:space:]]) [NC]
+RewriteRule ^ /%1 [R=301,L,NE]
+RewriteCond %{REQUEST_METHOD} ^(?:GET|HEAD)$ [NC]
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.php(?:[?[:space:]]) [NC]
+RewriteRule ^ /%1 [R=301,L,NE]
+
+# Resolve extensionless website/admin URLs internally to their PHP files.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+?)/?$ $1.php [L]

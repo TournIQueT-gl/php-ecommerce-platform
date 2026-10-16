@@ -1,0 +1,10 @@
+<?php
+// Copy this file to database.local.php and change values for your environment.
+// Typical XAMPP local MySQL uses user 'root' with a blank password by default.
+// Never upload database.local.php to source control or public downloads.
+return [
+    'host' => 'localhost',
+    'name' => 'universal_commerce',
+    'user' => 'root',
+    'pass' => '',
+];

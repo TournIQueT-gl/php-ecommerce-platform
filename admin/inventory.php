@@ -1,0 +1,1 @@
+<?php declare(strict_types=1);require_once __DIR__.'/../includes/admin.php';use App\Http\Controllers\Admin\InventoryController;use App\Support\View;require_admin_capability('inventory_manage');View::render('admin/inventory.php',(new InventoryController())->handle());

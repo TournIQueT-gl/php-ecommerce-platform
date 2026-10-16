@@ -1,0 +1,1 @@
+<?php declare(strict_types=1);require_once __DIR__.'/../includes/admin.php';use App\Http\Controllers\Admin\CustomersController;use App\Support\View;require_admin_capability('users');View::render('admin/customers.php',(new CustomersController())->handle());

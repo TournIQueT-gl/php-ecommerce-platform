@@ -1,0 +1,14 @@
+REAL REFERENCE IMAGES (remote Wikimedia Commons; credit the original creators and retain the license information)
+Dior logo 2022 — Christian Dior SE; Wikimedia Commons, public-domain text logo, trademark restrictions may apply: https://commons.wikimedia.org/wiki/File:Dior_Logo_2022.svg
+Chanel logo — Wikimedia Commons, text logo/trademark restrictions may apply: https://commons.wikimedia.org/wiki/File:Chanel_logo.svg
+Vanilla — Sunil Elias, CC BY-SA 3.0: https://commons.wikimedia.org/wiki/File:Vanilla_beans.jpg
+Bergamot fruit — Wikimedia Commons, CC BY-SA 2.0: https://commons.wikimedia.org/wiki/File:Bergamotfruit.jpg
+Rose — Wikimedia Commons, CC0: https://commons.wikimedia.org/wiki/File:Rose_(fleur).jpg
+Sandalwood — Kowloonese, CC BY-SA 3.0: https://commons.wikimedia.org/wiki/File:Sandalwood.jpg
+Some imagery is hotlinked to Wikimedia Commons and needs browser internet connectivity. Replace with approved local commercial-use assets before production deployment, preserving attribution/licensing as required. Do not imply brand endorsement; brand marks are third-party trademarks.
+
+Repair 15: additional logo source references are optionally shown when merchant has not uploaded a real image:
+Valentino wordmark — https://commons.wikimedia.org/wiki/File:Valentino_logo.svg (PD-textlogo; trademark).
+Prada wordmark — https://commons.wikimedia.org/wiki/File:Prada-Logo.svg (PD-textlogo; trademark).
+These are Wikimedia Commons remote URL references, not local bundled assets. Brand owners retain trademarks.
+Generic pastel icon SVGs are no longer used in scrolling brand/note showcases when an official/photo source is missing. Upload approved images in the admin catalog for complete photography coverage.

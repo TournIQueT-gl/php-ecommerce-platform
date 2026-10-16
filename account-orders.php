@@ -1,0 +1,1 @@
+<?php declare(strict_types=1);require_once __DIR__.'/includes/auth.php';require_once __DIR__.'/includes/account_layout.php';use App\Http\Controllers\AccountOrdersController;use App\Support\View;init_web_request();require_login();View::render('account/orders.php',(new AccountOrdersController())->handle());

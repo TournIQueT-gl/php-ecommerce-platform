@@ -1,0 +1,54 @@
+# Installation-specific credentials and environment overrides
+/config/database.local.php
+/config/*.secret.php
+.env
+.env.*
+!.env.example
+*.pem
+*.pfx
+*.key
+*.crt
+*.sql.gz
+
+# Runtime state, customer information, logs and backups
+/storage/*
+!/storage/cache/
+!/storage/logs/
+!/storage/backups/
+!/storage/support/
+/storage/cache/*
+/storage/logs/*
+/storage/backups/*
+/storage/support/*
+!/storage/cache/.gitkeep
+!/storage/logs/.gitkeep
+!/storage/backups/.gitkeep
+!/storage/support/.gitkeep
+!/storage/cache/.htaccess
+!/storage/logs/.htaccess
+!/storage/backups/.htaccess
+!/storage/support/.htaccess
+/storage/site-settings.json
+/storage/site-settings.lock
+
+# Uploaded merchant/customer content; tracked placeholder SVGs only
+/uploads/media/*
+!/uploads/media/.gitkeep
+!/uploads/media/catalog/
+/uploads/media/catalog/*
+!/uploads/media/catalog/curated/
+/uploads/media/catalog/curated/*
+!/uploads/media/catalog/curated/*.svg
+
+# Local development
+/.idea/
+/.vscode/
+*.log
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+/vendor/
+/node_modules/
+/coverage/

@@ -1,0 +1,11 @@
+<?php
+require_once __DIR__.'/../../includes/public_layout.php';
+$ret=(int)(analytics_settings()['retention_days']??90);$settings=store_runtime_settings();
+$blocks=json_decode((string)($settings['page_privacy_blocks_json']??''),true);if(!is_array($blocks))$blocks=[
+ ['heading'=>'Customer accounts','body'=>'Account data can include your username, email address, security history, wishlist and order history. Passwords are stored as secure hashes rather than readable passwords.'],
+ ['heading'=>'Orders and delivery','body'=>'Checkout information can include your name, mobile number, delivery address, order contents, payment state and shipping history. This information is used to process and support your purchase.'],
+ ['heading'=>'Visitor analytics','body'=>'The website can record first-party session, device, referrer, campaign and page-view information to operate and improve the storefront.'],
+];
+public_layout_start(['title'=>'Privacy · '.store_runtime_name(),'description'=>'Privacy information for customer accounts and first-party analytics.','body_class'=>'public-content-page']); ?>
+<div class="public-content-main"><section class="public-content-hero"><div class="eyebrow">PRIVACY</div><h1><?=store_h((string)($settings['page_privacy_heading']??'Your information, handled with restraint.'))?></h1><p><?=store_h((string)($settings['page_privacy_intro']??'We use customer and first-party operational data to run the store, fulfill orders, protect accounts and understand how the storefront performs.'))?></p></section><section class="public-prose"><?php foreach($blocks as $block):$bh=trim((string)($block['heading']??''));$bb=trim((string)($block['body']??''));if($bh===''||$bb==='')continue;?><h2><?=store_h($bh)?></h2><p><?=nl2br(store_h($bb),false)?></p><?php endforeach;?><h2>Protected operational disclosures</h2><p>Security, commerce and legally relevant records can be retained longer than marketing or visitor analytics. Detailed visitor analytics are configured for approximately <?=number_format($ret)?> days before automatic cleanup. Passwords and payment credentials are never stored in readable visitor analytics.</p><h2>Browser privacy signals</h2><p>When your browser sends Do Not Track (DNT) or Global Privacy Control (GPC), first-party visitor analytics are not started for that request.</p></section></div>
+<?php public_layout_end(); ?>

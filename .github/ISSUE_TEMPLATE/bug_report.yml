@@ -1,0 +1,43 @@
+name: Bug report
+description: Report a reproducible problem in Universal Commerce
+title: "[Bug]: "
+labels: ["bug", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: "Please redact credentials, session cookies, user records, API keys, and private logs. Report vulnerabilities privately as described in SECURITY.md."
+  - type: textarea
+    id: problem
+    attributes:
+      label: What went wrong?
+      description: Include expected versus actual behavior.
+      placeholder: Describe the observed behavior and impact.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Use test data only.
+    validations:
+      required: true
+  - type: input
+    id: php
+    attributes:
+      label: PHP and database version
+      placeholder: PHP 8.4 / MySQL 8.0
+  - type: input
+    id: schema
+    attributes:
+      label: Migration/schema level
+      placeholder: Through 051
+  - type: input
+    id: environment
+    attributes:
+      label: Browser / OS / web server
+      placeholder: Chrome / Windows / Apache
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sanitized errors or screenshots
+      description: Never include secrets or personal customer data.

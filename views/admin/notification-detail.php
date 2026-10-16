@@ -1,0 +1,10 @@
+<?php admin_page_start('Notification','notifications','COMMUNICATION','Notification','Details','Review the complete event before opening its related page.'); ?>
+<?php if($error):?><div class="app-alert admin-alert danger"><?=htmlspecialchars($error,ENT_QUOTES,'UTF-8')?></div><?php elseif($notification): $data=$notification['data']??[]; ?>
+<section class="app-panel admin-panel admin-card-pad">
+  <div class="panel-heading"><div><p class="panel-kicker"><?=htmlspecialchars(strtoupper(str_replace(['.','_'],' ',(string)$notification['type'])),ENT_QUOTES,'UTF-8')?></p><h2><?=htmlspecialchars((string)$notification['title'],ENT_QUOTES,'UTF-8')?></h2><p class="panel-count"><?=web_local_datetime($notification['created_at']??null,'Unknown')?></p></div><span class="app-badge status-active"><i></i>DETAILS</span></div>
+  <div class="admin-notification-message"><?=nl2br(htmlspecialchars((string)$notification['body'],ENT_QUOTES,'UTF-8'))?></div>
+  <?php $meta=[];foreach(['ticket_id'=>'Ticket','service_key'=>'Service','status'=>'Status','previous_status'=>'Previous state','response_ms'=>'Response time (ms)','http_code'=>'HTTP','version'=>'Version','reason'=>'Reason','incident_id'=>'Incident','request_id'=>'Recovery request','username'=>'User'] as $key=>$label){if(isset($data[$key])&&$data[$key]!==''&&$data[$key]!==null)$meta[$label]=(string)$data[$key];} ?>
+  <?php if($meta):?><div class="admin-grid-2 admin-section-mini"><?php foreach($meta as $label=>$value):?><div class="admin-detail-field"><span><?=htmlspecialchars($label,ENT_QUOTES,'UTF-8')?></span><strong><?=htmlspecialchars($value,ENT_QUOTES,'UTF-8')?></strong></div><?php endforeach;?></div><?php endif;?>
+  <div class="admin-action-group admin-section-space-sm"><a class="app-button admin-button primary" href="<?=htmlspecialchars((string)$target['url'],ENT_QUOTES,'UTF-8')?>"><?=htmlspecialchars(strtoupper((string)$target['label']),ENT_QUOTES,'UTF-8')?> ↗</a><a class="app-button admin-button secondary" href="<?=htmlspecialchars(route_url('admin/notifications.php'),ENT_QUOTES,'UTF-8')?>">Back to notifications</a></div>
+</section>
+<?php endif;?><?php admin_page_end(); ?>

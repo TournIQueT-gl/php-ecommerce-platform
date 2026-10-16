@@ -52,3 +52,11 @@ Thumbs.db
 /vendor/
 /node_modules/
 /coverage/
+
+# Temporary export bundles and patch rejects
+*.zip
+*.orig
+*.rej
+*.swp
+.phpunit.result.cache
+.phpunit.cache/

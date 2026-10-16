@@ -95,7 +95,7 @@ The `046`–`051` migrations add reusable attributes, variant definitions, multi
 | `views/` | Storefront, account and admin templates |
 | `bin/` | Migration, scheduling, diagnostic and release tools |
 | `storage/` | Private runtime state (empty directory scaffolding only) |
-| `uploads/` | Generated assets and merchant uploads (only mockup SVG placeholders tracked) |
+| `uploads/` | Merchant uploads at runtime, plus a small set of homepage-builder preview SVGs tracked in Git |
 
 ## Verification
 
